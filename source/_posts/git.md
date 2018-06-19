@@ -5,9 +5,84 @@ categories: tools
 tags: [git]
 ---
 
-这并不是一篇讲解 git 的文章，这里主要记录一些实用但是可能不常用的 git 命令，方便自己查阅。
+git 实用汇总，很多小技巧，开发中经常遇到，速查手册。
 
 <!-- more -->
+
+## stash
+
+有时候我们一个功能开发了一半，不想 commit 也不想丢掉，这个时候可以用 stash 解决。
+
+```bash
+# 把修改暂存起来
+git add --all
+git stash
+
+# 查看刚刚的暂存信息
+git stash list
+
+# 需要继续开发，把暂存的东西 pop 出来
+git stash pop
+
+# 现在再看暂存列表，已经没有之前的记录了
+git stash list
+```
+
+## 只提交部分文件
+
+```bash
+# 提交指定文件
+git add a.go b.go c.go
+git commit -m "add some file"
+
+# 查看状态，确定还有未提交文件
+git status
+
+# 暂存
+git add -all
+git stash
+```
+## 取消 add
+
+```bash
+git reset HEAD a.go
+```
+
+## 已经修改，未 add, 变成未修改状态
+
+```bash
+git checkout -- a.go
+
+# 如果想把所有文件都变成未修改状态
+git checkout -- .
+```
+
+## 取消 commit
+
+已经 commit 了，但是不想要了，想回到上一个 commit 重写
+
+```bash
+#回到上一个 commit，把这个 commit 的修改变为 unstaged changes
+git reset HEAD^
+
+# 把 unstaged changes 变回未修改状态
+git checkout -- .
+```
+
+## revert
+
+有时候我们代码已经 push 了，但是不想要了：
+
+```bash
+# 回到上次代码
+git reset HEAD^
+git checkout -- .
+git push -f
+
+# 或者温柔点的做法
+git revert HEAD
+git push
+```
 
 ## submodule
 Git 子模块功能允许你将一个Git仓库当作另外一个Git仓库的子目录。这允许你克隆另外一个仓库到你的项目中并且保持你的提交相对独立。
@@ -37,8 +112,8 @@ git config --global --list
 
 ## 设置信息
 ```bash
-git config --global user.name "lee"
-git config --global user.email "lee@test.com"
+git config --global user.name "yourname"
+git config --global user.email "yourname@test.com"
 
 # 代理
 git config --global http.proxy http://proxy.com:80
@@ -63,7 +138,7 @@ git log -1 --pretty=%B
 1. git log 查看你提交的commit 号
 ```bash
 commit 3e54a734e42bb8f9e2c32c193de741432f544d28
-Author: lee <lee@test.com>
+Author: yourname <yourname@test.com>
 Date:   Fri Apr 29 14:13:16 2016 +0800
 
     614005245543 upgrade librados2* librbd1*

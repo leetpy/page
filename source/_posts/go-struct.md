@@ -5,6 +5,10 @@ categories: coding
 tags: [go]
 ---
 
+go 语言中结构体有点类似 OOP 语言中的类，但是又有着很大区别。go 使用大小写来控制属性的访问权限，如果首字母大写在其它包中可以被访问，否则只能在本包中访问
+
+<!-- more -->
+
 ## 结构体声明
 
 ```go
@@ -18,8 +22,6 @@ type Employee struct {
     ManagerID int
 }
 ```
-
-<!-- more -->
 
 ## 对象声明及初始化
 ```go
