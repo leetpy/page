@@ -1,7 +1,7 @@
 ---
 title: Docker 常用命令
 date: 2017-05-08 10:32:49
-categories: Paas
+categories: PaaS
 tags: [Docker]
 ---
 
@@ -48,13 +48,13 @@ tags: [Docker]
   ```shell
   # 使用 name
   docker attach <name>
-  
+
   # 使用 id
   docker attach <id>
-  
+
   # 使用 name
   docker exec -it <name> /bin/bash
-  
+
   # 使用 id
   docker exec -it <id> /bin/bash
   ```

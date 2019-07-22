@@ -7,6 +7,8 @@ tags: [go]
 
 go 语言的标准库 io 包主要定义了常用的 io接口，具体如如下：
 
+<!-- more -->
+
 ```go
 // 读取接口
 type Reader interface {
@@ -82,3 +84,12 @@ ioutil
 // 读取所有数据
 func ReadAll(r io.Reader) ([]byte, error)
 ```
+
+
+
+读取文件
+
+```go
+dataBytes, err := ioutil.ReadFile(myFile)
+```
+

@@ -6,6 +6,7 @@ tags: [openstack]
 ---
 
 virsh 是 libvirt 的 cli 工具，通过调用 libvirt 接口来控制虚拟机。
+
 <!-- more -->
 
 ## 常用命令

@@ -18,6 +18,9 @@ git 实用汇总，很多小技巧，开发中经常遇到，速查手册。
 git add --all
 git stash
 
+# stash 的时候指定名字
+git stash save <name>
+
 # 查看刚刚的暂存信息
 git stash list
 
@@ -26,6 +29,9 @@ git stash pop
 
 # 现在再看暂存列表，已经没有之前的记录了
 git stash list
+
+# 删除所有的stash
+git stash clear
 ```
 
 ## 只提交部分文件
@@ -82,6 +88,11 @@ git push -f
 # 或者温柔点的做法
 git revert HEAD
 git push
+```
+## 把其它分支代码更新到当前分支
+
+```
+git pull origin master:master
 ```
 
 ## submodule
@@ -148,3 +159,10 @@ Date:   Fri Apr 29 14:13:16 2016 +0800
 4. 这个时候你用git status 命令查看，切换的分支代码是已经add和commit的，由于不同的分支我们使用的EC单号不同，这个时候我们需要修改commit信息
 5. 使用git commit --amend 这个时候git会自动调用vi打开你的commit信息，你编辑成新的就可以了。
 6. 使用git push origin 远程分支名 提交代码
+
+## 创建远程分支
+
+```bash
+# eg: 本地分支名为 dev01, 创建远程分支 dev01
+git push origin dev01:dev01
+```

@@ -7,7 +7,7 @@ tags: [python]
 
 # 使用nose进行单元测试
 
-nose 是一个很 nice 的 python 测试框架，使用起来非常方便。有些 openstack 项目也使用 nova 进行单元测试。
+nose是一个很nice的python测试框架，使用起来非常方便。有些openstack项目也使用nose进行单元测试。
 
 <!-- more -->
 
