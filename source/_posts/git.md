@@ -166,3 +166,10 @@ Date:   Fri Apr 29 14:13:16 2016 +0800
 # eg: 本地分支名为 dev01, 创建远程分支 dev01
 git push origin dev01:dev01
 ```
+
+## 修改远程分支地址
+
+```bash
+git remote set-url origin https://test.git
+```
+

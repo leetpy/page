@@ -28,6 +28,16 @@ exec "$SHELL"
 pyenv install 2.7.10
 ```
 
+
+
+centos 安装如下rpm 包:
+
+```bash
+yum install patch openssl-devel -y
+```
+
+
+
 如果系统没有安装`patch`命令，在安装python的时候会报如下错误：
 
 ```shell
